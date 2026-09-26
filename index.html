@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <title>A Tribute of Eternal Love — Happy Mother's Day</title>
+
+  <!-- Premium Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Fullscreen Physics Canvas (Active ONLY in Scene 4) -->
+  <canvas id="stageCanvas"></canvas>
+
+  <!-- Optical Shockwave Blast for Scene 4 -->
+  <div class="shockwave" id="shockwave"></div>
+
+  <!-- Ambient Cinematic Lighting (Revealed ONLY at the Finale) -->
+  <div class="ambient-glow" id="ambientGlow"></div>
+  <div class="light-shafts" id="lightShafts"></div>
+  <div class="vignette"></div>
+
+  <!-- Header Navigation -->
+  <header class="top-bar">
+    <div class="brand">FOR MOM</div>
+
+    <!-- Stepper Navigation -->
+    <div class="stepper">
+      <div class="step active" id="step1"><span>01</span></div>
+      <div class="step-divider"></div>
+      <div class="step" id="step2"><span>02</span></div>
+      <div class="step-divider"></div>
+      <div class="step" id="step3"><span>03</span></div>
+      <div class="step-divider"></div>
+      <div class="step" id="step4"><span>04</span></div>
+    </div>
+
+    <!-- Minimal Sound Toggle -->
+    <button class="sound-pill" id="soundBtn" aria-label="Toggle Sound">
+      <div class="equalizer">
+        <span class="bar b1"></span>
+        <span class="bar b2"></span>
+        <span class="bar b3"></span>
+      </div>
+      <span class="sound-text">MUSIC</span>
+    </button>
+  </header>
+
+  <!-- Champagne Lanterns (Hidden until the image is assembled) -->
+  <div class="lantern lantern-left" id="lanternLeft" aria-hidden="true">
+    <svg viewBox="0 0 100 200" class="lantern-svg">
+      <defs>
+        <radialGradient id="lampGlowL" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="rgba(255, 220, 130, 0.95)" />
+          <stop offset="60%" stop-color="rgba(255, 120, 150, 0.25)" />
+          <stop offset="100%" stop-color="transparent" />
+        </radialGradient>
+      </defs>
+      <circle cx="50" cy="100" r="45" fill="url(#lampGlowL)" class="flame-aura"/>
+      <polygon points="30,55 70,55 64,145 36,145" fill="rgba(255, 240, 245, 0.05)" stroke="#e5c07b" stroke-width="1.5"/>
+      <path d="M 50 20 L 50 55 M 30 55 L 50 40 L 70 55" stroke="#e5c07b" stroke-width="2" fill="none"/>
+      <rect x="45" y="105" width="10" height="32" rx="2" fill="#fff7ed"/>
+      <g class="flicker-flame">
+        <ellipse cx="50" cy="95" rx="3.5" ry="8" fill="#ffb703"/>
+        <ellipse cx="50" cy="96" rx="2" ry="4" fill="#ffffff"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="lantern lantern-right" id="lanternRight" aria-hidden="true">
+    <svg viewBox="0 0 100 200" class="lantern-svg">
+      <circle cx="50" cy="100" r="45" fill="url(#lampGlowL)" class="flame-aura"/>
+      <polygon points="30,55 70,55 64,145 36,145" fill="rgba(255, 240, 245, 0.05)" stroke="#e5c07b" stroke-width="1.5"/>
+      <path d="M 50 20 L 50 55 M 30 55 L 50 40 L 70 55" stroke="#e5c07b" stroke-width="2" fill="none"/>
+      <rect x="45" y="105" width="10" height="32" rx="2" fill="#fff7ed"/>
+      <g class="flicker-flame">
+        <ellipse cx="50" cy="95" rx="3.5" ry="8" fill="#ffb703"/>
+        <ellipse cx="50" cy="96" rx="2" ry="4" fill="#ffffff"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Interactive Story Stages -->
+  <main class="viewport-stage">
+
+    <!-- ================= SCENE 1: THE SURPRISE ================= -->
+    <section class="scene-card active" id="scene1">
+      <div class="surprise-box">
+        <div class="portal-emblem" id="portalTrigger">
+          <div class="ring-pulse"></div>
+          <div class="ring-dashed"></div>
+          <span class="portal-gem">✦</span>
+        </div>
+        <h1 class="hero-headline">There is an exciting surprise<br>waiting just for you.</h1>
+        <p class="hero-subtext">Take a gentle breath, turn up your sound, and step inside.</p>
+        <button class="gold-action-btn" id="startSurpriseBtn">
+          <span>Open Your Surprise</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ================= SCENE 2: EMOTIONAL LINES ================= -->
+    <section class="scene-card" id="scene2">
+      <div class="editorial-card">
+        <h2 class="cinematic-quote">"Before we took our first breath,<br>you already loved us."</h2>
+        <div class="gold-strip"></div>
+        <p class="emotional-para">
+          In every quiet sacrifice, every selfless prayer, and every warm embrace when the world felt cold—your love has been our steadfast shield and our purest home.
+        </p>
+        <button class="next-scene-btn" id="toLetterBtn">
+          <span>Read Mom's Letter &rarr;</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ================= SCENE 3: THE LETTER ================= -->
+    <section class="scene-card" id="scene3">
+      <div class="parchment-letter">
+        <div class="letter-scroll-area">
+          <h2 class="letter-salutation">Dearest Mom,</h2>
+          <p class="letter-body">
+            If love could be weighed in stars, you would hold the entire universe in your hands. Thank you for the battles you fought in silence so that we could smile without a worry.
+          </p>
+          <p class="letter-body">
+            Thank you for being our gentlest comfort and our strongest pillar. Everything good, kind, and brave within us was planted by your loving hands.
+          </p>
+          <p class="letter-signature">Forever with all my love,<br><span class="signature-font">Always by your side</span></p>
+        </div>
+
+        <div class="letter-footer">
+          <button class="explode-action-btn" id="unveilStarsBtn">
+            <span>✨ Touch to Release the Stars ✨</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SCENE 4: COSMIC EXPLOSION & DOT REVEAL ================= -->
+    <section class="scene-card" id="scene4">
+      <!-- Floating Tap Prompt -->
+      <div class="assemble-hint" id="assembleHint">
+        <p>✦ Tap anywhere to unite the stars into Mom’s portrait ✦</p>
+      </div>
+
+      <!-- Finale Title & Dedication (Revealed only after dots complete the image) -->
+      <div class="finale-content" id="finaleContent">
+        <h1 class="grand-gold-heading">Happy Mother's Day</h1>
+        <p class="grand-quote">"To the world you are a mother, but to our family you are the world."</p>
+        <p class="grand-thanks">Thank you for your infinite grace, your endless warmth, and your boundless heart.</p>
+        <button class="replay-btn" id="replayBtn">&#x21bb; Experience Again</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Audio Element -->
+  <audio id="bgMusic" src="music.mp3" preload="auto" loop></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
